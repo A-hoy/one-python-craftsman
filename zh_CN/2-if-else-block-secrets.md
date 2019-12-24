@@ -232,7 +232,7 @@ class UserCollection(object):
         self._users = users
 
 
-users = UserCollection([piglei, raymond])
+users = UserCollection(["piglei", "raymond"])
 
 if len(users._users) > 0:
     print("There's some users in collection!")
@@ -250,7 +250,7 @@ class UserCollection:
         return len(self._users)
 
 
-users = UserCollection([piglei, raymond])
+users = UserCollection(["piglei", "raymond"])
 
 # 定义了 __len__ 方法后，UserCollection 对象本身就可以被用于布尔判断了
 if users:
@@ -263,7 +263,7 @@ if users:
 
 `all()` 和 `any()` 两个函数非常适合在条件判断中使用。这两个函数接受一个可迭代对象，返回一个布尔值，其中：
 
-- `all(seq)`：仅当 `seq` 中所有对象都为布尔真时返回 `True`，否则返回 `False`
+- `all(seq)`：当 `seq` 中所有对象都为布尔真或 `seq` 为空时返回 `True`，否则返回 `False`
 - `any(seq)`：只要 `seq` 中任何一个对象为布尔真就返回 `True`，否则返回 `False`
 
 假如我们有下面这段代码：
